@@ -9,18 +9,17 @@
 	
 	<body>
 		
-		<!-- Put the following javascript before the closing </head> tag. -->
-<script>
-  (function() {
-    var cx = '004461211522308811956:cbsrrlswngg';
-    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
-  })();
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'en', style : google.loader.themes.V2_DEFAULT});
+  google.setOnLoadCallback(function() {
+    var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+      '004461211522308811956:cbsrrlswngg', customSearchOptions);
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
 </script>
 
-<!-- Place this tag where you want both of the search box and the search results to render -->
-<gcse:search></gcse:search>
-	</body>
+
 </html>
